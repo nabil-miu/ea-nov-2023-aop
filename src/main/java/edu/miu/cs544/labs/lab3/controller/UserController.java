@@ -1,5 +1,6 @@
 package edu.miu.cs544.labs.lab3.controller;
 
+import edu.miu.cs544.labs.lab3.aspects.annotations.ExecutionTime;
 import edu.miu.cs544.labs.lab3.entity.User;
 import edu.miu.cs544.labs.lab3.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -16,6 +17,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/")
+    @ExecutionTime
     public List<User> getAllUsers() {
         return userService.findAll();
     }

@@ -1,5 +1,6 @@
 package edu.miu.cs544.labs.lab3.controller;
 
+import edu.miu.cs544.labs.lab3.aspects.annotations.ExecutionTime;
 import edu.miu.cs544.labs.lab3.entity.Review;
 import edu.miu.cs544.labs.lab3.service.ReviewService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -17,6 +18,7 @@ public class ReviewController {
     private final ReviewService reviewService;
 
     @GetMapping("/")
+    @ExecutionTime
     public List<Review> getAllReviews() {
         return reviewService.findAll();
     }

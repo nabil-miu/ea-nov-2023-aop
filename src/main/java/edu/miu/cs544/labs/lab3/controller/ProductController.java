@@ -1,5 +1,6 @@
 package edu.miu.cs544.labs.lab3.controller;
 
+import edu.miu.cs544.labs.lab3.aspects.annotations.ExecutionTime;
 import edu.miu.cs544.labs.lab3.entity.Product;
 import edu.miu.cs544.labs.lab3.service.ProductService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -16,7 +17,8 @@ public class ProductController {
     private final ProductService service;
 
     @GetMapping("/")
-    public List<Product> getAllUsers() {
+    @ExecutionTime
+    public List<Product> getAllProducts() {
         return service.findAll();
     }
 
